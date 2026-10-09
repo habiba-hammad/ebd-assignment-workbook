@@ -1,0 +1,56 @@
+
+> ebd-w26-workbook@1.0.0 test
+> node scripts/test.js a
+
+
+ RUN  v3.2.7 /Users/habibahammad/Desktop/ebd-assignment-workbook
+
+ ❯ checkpoint-a/solution.test.js (21 tests | 2 failed) 50ms
+   ✓ setup > has a generated spec.md, which means you ran generate.js 1ms
+   ✓ setup > worked out which GitHub account this repo belongs to 0ms
+   ✓ loadOrders > is async, so it returns a promise 0ms
+   ✓ loadOrders > returns every order in the database 21ms
+   ✓ loadOrders > returns the orders themselves, not just their ids 21ms
+   ✓ myOrders > keeps only the orders from your city with your status 1ms
+   ✓ myOrders > keeps every order that matches, and finds some 0ms
+   ✓ myOrders > keeps nothing that fails either half of the test 0ms
+   ✓ myOrders > returns an empty list when nothing matches 0ms
+   ✓ summarize > summarizes your own filtered orders the way your spec asks 0ms
+   ✓ summarize > summarizes the whole list the same way 0ms
+   ✓ summarize > returns a number 0ms
+   ✓ summarize > returns 0 for an empty list 0ms
+   × describeOrder > describes order 1 in the shape your spec gives 4ms
+     → expected 'No order with id 1' to be 'Notebook x2 ordered by Mariam Khalid' // Object.is equality
+   × describeOrder > describes a different order correctly too 1ms
+     → expected 'No order with id 23' to be 'Ruler x4 ordered by Yasmin Adel' // Object.is equality
+   ✓ describeOrder > returns your not-found wording for an id that does not exist 0ms
+   ✓ describeOrder > never throws, even for a missing order 0ms
+   ✓ toJsonLines > returns a string, not an array 0ms
+   ✓ toJsonLines > keeps only the fields your spec asks for 0ms
+   ✓ toJsonLines > works on your filtered orders too 0ms
+   ✓ toJsonLines > returns [] for an empty list 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  checkpoint-a/solution.test.js > describeOrder > describes order 1 in the shape your spec gives
+AssertionError: expected 'No order with id 1' to be 'Notebook x2 ordered by Mariam Khalid' // Object.is equality
+
+Expected: [32m"No[7mtebook x2 ordered by Mariam Khalid[27m"[39m
+Received: [31m"No[7m order with id 1[27m"[39m
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  checkpoint-a/solution.test.js > describeOrder > describes a different order correctly too
+AssertionError: expected 'No order with id 23' to be 'Ruler x4 ordered by Yasmin Adel' // Object.is equality
+
+Expected: [32m"Ruler x4 ordered by Yasmin Adel"[39m
+Received: [31m"No order with id 23"[39m
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 19 passed (21)
+   Start at  23:43:05
+   Duration  341ms (transform 26ms, setup 0ms, collect 73ms, tests 50ms, environment 0ms, prepare 73ms)
+
